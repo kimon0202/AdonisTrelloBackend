@@ -1,0 +1,16 @@
+'use strict'
+
+/** @type {typeof import('@adonisjs/lucid/src/Lucid/Model')} */
+const Model = use('Model')
+
+class Board extends Model {
+  user() {
+    return this.belongsTo('App/Models/User');
+  }
+
+  entries() {
+    return this.hasMany('App/Models/Entry');
+  }
+}
+
+module.exports = Board
